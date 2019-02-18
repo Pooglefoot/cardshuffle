@@ -116,7 +116,7 @@ def corgi(decklist):
     return decklist
 
 #################################################
-#--- Formerly Filthy but now Mon-Global Code ---#
+#--- Formerly Filthy but now Non-Global Code ---#
 #################################################
 
 def dealer():
