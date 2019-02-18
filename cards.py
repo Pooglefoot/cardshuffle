@@ -115,65 +115,68 @@ def corgi(decklist):
     shuffle(decklist)
     return decklist
 
-############################
-#--- Filthy Global Code ---#
-############################
+#################################################
+#--- Formerly Filthy but now Mon-Global Code ---#
+#################################################
 
-os.system("clear")
-menu = True
-deck = []
-while menu == True:
-    print("\nHi, I'm your dealer.")
-    if len(deck) == 0:
-        print("\nIt seems like you don't have a deck. One is being generated for you.\n")
-        deck = create_deck()
-        print(deck)
-    print("\nPlease enter a command.")
-    print("\nEnter 1 to see your current deck.")
-    print("Enter 2 to get a new, unshuffled deck.")
-    print("Enter 3 for a Riffle Shuffle.")
-    print("Enter 4 for a Mongean Shuffle.")
-    print("Enter 5 for a Pile Shuffle.")
-    print("Enter 6 for a Corgi Shuffle.")
-    print("Enter 7 to clear console.")
-    print("Enter 8 to quit.\n")
-
-    inp = input("What would you like to do? ")
-    if inp.isdigit():
-        inp = int(inp)
-    else:
-        print("\nThat is not a number.")
-        continue
-
-    if inp < 1 or inp > 8:
-        print("\nUnrecognised command, please try again.")
-    elif inp == 8:
-        menu = False
-        break
-    else:
-        if inp == 1:
-            print("\nThis is your current deck.")
-            print(deck)
-        elif inp == 2:
+def dealer():
+    os.system("clear")
+    menu = True
+    deck = []
+    while menu == True:
+        print("\nHi, I'm your dealer.")
+        if len(deck) == 0:
+            print("\nIt seems like you don't have a deck. One is being generated for you.\n")
             deck = create_deck()
-            print("\nHere's your new deck.\n")
             print(deck)
-        elif inp == 3:
-            deck = riffle(deck)
-            print("\nRiffle Shuffle coming up.\n")
-            print(deck)
-        elif inp == 4:
-            deck = mongean(deck)
-            print("\nMongean Shuffle, exciting!\n")
-            print(deck)
-        elif inp == 5:
-            deck = pile(deck)
-            print("\nStructural and ordered, here you go.\n")
-            print(deck)
-        elif inp == 6:
-            deck = corgi(deck)
-            print("\nEasy and effective, here you go!\n")
-            print(deck)
-        elif inp == 7:
-            os.system("clear")
-        del inp
+        print("\nPlease enter a command.")
+        print("\nEnter 1 to see your current deck.")
+        print("Enter 2 to get a new, unshuffled deck.")
+        print("Enter 3 for a Riffle Shuffle.")
+        print("Enter 4 for a Mongean Shuffle.")
+        print("Enter 5 for a Pile Shuffle.")
+        print("Enter 6 for a Corgi Shuffle.")
+        print("Enter 7 to clear console.")
+        print("Enter 8 to quit.\n")
+
+        inp = input("What would you like to do? ")
+        if inp.isdigit():
+            inp = int(inp)
+        else:
+            print("\nThat is not a number.")
+            continue
+    
+        if inp < 1 or inp > 8:
+            print("\nUnrecognised command, please try again.")
+        elif inp == 8:
+            menu = False
+            break
+        else:
+            if inp == 1:
+                print("\nThis is your current deck.")
+                print(deck)
+            elif inp == 2:
+                deck = create_deck()
+                print("\nHere's your new deck.\n")
+                print(deck)
+            elif inp == 3:
+                deck = riffle(deck)
+                print("\nRiffle Shuffle coming up.\n")
+                print(deck)
+            elif inp == 4:
+                deck = mongean(deck)
+                print("\nMongean Shuffle, exciting!\n")
+                print(deck)
+            elif inp == 5:
+                deck = pile(deck)
+                print("\nStructural and ordered, here you go.\n")
+                print(deck)
+            elif inp == 6:
+                deck = corgi(deck)
+                print("\nEasy and effective, here you go!\n")
+                print(deck)
+            elif inp == 7:
+                os.system("clear")
+            del inp
+
+dealer()
